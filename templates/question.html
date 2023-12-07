@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1> Запитання</h1>
+
+        <p>{{ question[2] }}</p>
+        <form action="{{ url_for('answer_func', quizz_id=quizz_id) }}" method="post">
+            {% for option in options %}
+                <div>
+                    <input type="radio" id="option{{ loop.index }}" name="answer" value="{{ option[2] }}">
+                    <label for="option{{ loop.index }}">{{ option[2] }}</label>
+                </div>
+            {% endfor %}
+            <input type="hidden" name="question_id" value="{{ question[0] }}">
+            <button type="submit">Submit Answer</button>
+        </form>
+    </div>
+</body>
+</html>

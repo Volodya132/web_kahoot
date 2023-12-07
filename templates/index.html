@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Квізи</title>
+     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<h1>Квізи</h1>
+
+{%for quizz in quizzes %}
+    <h2>{{ quizz[1] }}</h2>
+    <p>{{  quizz[2] }}</p>
+    <a href="/quizzes/{{ quizz[0] }}">Почати квіз!</a>
+{% endfor %}
+
+</body>
+</html>
